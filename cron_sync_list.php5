@@ -151,7 +151,7 @@ function get_bug_soap($ident, $cur, $count, $isUpdate) {
     }
     $bugobj = $bugresponse[$ident];
 
-    if (!preg_match("/^(IT[AP]|O|RF[AHP]): ([^ ]+)(?: --?|:) (.+)$/", $bugobj->subject, $matches)) {
+    if (!preg_match("/^(IT[AP]|O|RF[AHP]): *([^ ]+)(?: --?|:) *(.+)?$/", $bugobj->subject, $matches)) {
         echo "  FORMAT ERROR (pattern \"^(ITA|ITP|O|RFA|RFH|RFP): [^ ]+ -- .+\$\")\n";
         return;
     }
